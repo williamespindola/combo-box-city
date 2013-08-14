@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS `pais` (
 
 INSERT INTO `pais` (`id`, `nome`, `sigla`) VALUES (1, 'Brasil', 'BR');
 
-
 CREATE TABLE IF NOT EXISTS `estado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(75) DEFAULT NULL,
@@ -16,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `estado` (
   PRIMARY KEY (`id`),
   KEY `fk_Estado_pais` (`pais`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
-
 
 INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`) VALUES
 (1, 'Acre', 'AC', 1),
@@ -46,13 +44,6 @@ INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`) VALUES
 (25, 'Sergipe', 'SE', 1),
 (26, 'São Paulo', 'SP', 1),
 (27, 'Tocantins', 'TO', 1);
-
-
-
-
-
-
-
 
 CREATE TABLE IF NOT EXISTS `cidade` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
