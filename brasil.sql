@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `pais` (
   `nome` varchar(60) DEFAULT NULL,
   `sigla` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+);
 
 INSERT INTO `pais` (`id`, `nome`, `sigla`) VALUES (1, 'Brasil', 'BR');
 
@@ -11,12 +11,12 @@ CREATE TABLE IF NOT EXISTS `estado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(75) DEFAULT NULL,
   `uf` varchar(5) DEFAULT NULL,
-  `pais` int(7) DEFAULT NULL,
+  `pais_id` int(7) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_Estado_pais` (`pais`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+  KEY `fk_estado_pais` (`pais_id`)
+);
 
-INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`) VALUES
+INSERT INTO `estado` (`id`, `nome`, `uf`, `pais_id`) VALUES
 (1, 'Acre', 'AC', 1),
 (2, 'Alagoas', 'AL', 1),
 (3, 'Amazonas', 'AM', 1),
@@ -48,12 +48,12 @@ INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`) VALUES
 CREATE TABLE IF NOT EXISTS `cidade` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(120) DEFAULT NULL,
-  `estado` int(5) DEFAULT NULL,
+  `estado_id` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_Cidade_estado` (`estado`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5565 ;
+  KEY `fk_cidade_estado` (`estado_id`)
+);
 
-INSERT INTO `cidade` (`id`, `nome`, `estado`) VALUES
+INSERT INTO `cidade` (`id`, `nome`, `estado_id`) VALUES
 (1, 'Afonso Cláudio', 8),
 (2, 'Água Doce do Norte', 8),
 (3, 'Águia Branca', 8),
